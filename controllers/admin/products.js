@@ -9,6 +9,7 @@ exports.postAddProduct = async (req, res) => {
       price,
       imageUrl,
       description,
+      userId: req.user.id,
     });
 
     res.status(201).json(product);
