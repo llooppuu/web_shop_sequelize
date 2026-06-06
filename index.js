@@ -3,6 +3,7 @@ const { sequelize, User } = require('./models');
 const adminProductsRoutes = require('./routes/admin/products');
 const shopProductsRoutes = require('./routes/shop/products');
 const shopCartRoutes = require('./routes/shop/cart');
+const shopOrdersRoutes = require('./routes/shop/orders');
 
 const app = express();
 
@@ -30,6 +31,7 @@ sequelize
     app.use('/admin', adminProductsRoutes);
     app.use(shopProductsRoutes);
     app.use(shopCartRoutes);
+    app.use(shopOrdersRoutes);
 
     app.listen(3000, () => {
       console.log('Server is running on http://localhost:3000');
